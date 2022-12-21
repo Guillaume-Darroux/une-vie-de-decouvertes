@@ -1,0 +1,35 @@
+@use '../../styles/vars';
+
+.summary {
+    display: flex;
+    margin-top: vars.$gutter * 2;
+    justify-content: center;
+    
+    &-picture {
+        width: 440px;
+        height: 560px;
+        // height: 300px;
+        margin: vars.$gutter * 0.75;
+    }
+
+    &-resume {
+        // height: 300px;
+        // width: 450px;
+        width: 441px;
+        height: 560px;
+        padding: vars.$gutter;
+        margin: vars.$gutter * 0.75;
+        background-color: #E0C0A9;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        &-text {
+            font-size: 2rem;
+            line-height: 1.5;
+            text-align: center;
+            padding: vars.$gutter * 1.5;
+            padding-bottom: 0;
+        }
+    }
+}
