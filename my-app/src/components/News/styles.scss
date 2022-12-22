@@ -1,0 +1,38 @@
+.news {
+
+    &-title {
+        padding-top: 10rem;
+        margin: 5rem auto;
+        width: 300px;
+        font-weight: lighter;
+        border-bottom: 2px solid black;
+    }
+}
+
+.news-content {
+    height: 265px;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.article{
+    width: 292px;
+    height: 265px;
+    
+    &-image {
+        width: 292px;
+        height: 165px;
+    }
+    
+    &-text {
+        font-size: 1.5rem;
+        padding: 2rem;
+        border-bottom: 1px solid grey;
+        border-left: 1px solid grey;
+        border-right: 1px solid grey;
+        height: 100px;
+    }
+}

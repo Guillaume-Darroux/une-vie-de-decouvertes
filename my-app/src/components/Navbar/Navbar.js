@@ -12,7 +12,7 @@ export default class Navbar extends PureComponent {
 
     return (
       <div className="navbar">
-        <Menu pointing secondary>
+        <Menu pointing secondary className='navbar-menu'>
           <Menu.Item
             name='Accueil'
             active={activeItem === 'Accueil'}

@@ -1,5 +1,7 @@
 import React from 'react';
+import Contact from '../Contact/Contact';
 import Navbar from '../Navbar/Navbar';
+import News from '../News/News';
 //import Nav from '../Nav/Nav';
 import Summary from '../Summary/Summary';
 import Title from '../Title/Title';
@@ -11,6 +13,8 @@ function App() {
       <Navbar /> 
       <Title />
       <Summary />
+      <News />
+      <Contact />
     </div>
   );
 }
