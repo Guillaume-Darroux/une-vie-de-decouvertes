@@ -12,6 +12,7 @@ class Contact extends PureComponent {
     //const { value } = this.state
     return (
       <div className="form-container">
+        <h2 className='news-title'>CONTACT</h2>
         <Form>
             <Form.Group widths='equal'>
                 <Form.Input fluid placeholder='Votre prénom' />

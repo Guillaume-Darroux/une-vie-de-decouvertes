@@ -1,5 +1,6 @@
 import React from 'react';
 import Contact from '../Contact/Contact';
+import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 import News from '../News/News';
 //import Nav from '../Nav/Nav';
@@ -15,6 +16,7 @@ function App() {
       <Summary />
       <News />
       <Contact />
+      <Footer />
     </div>
   );
 }

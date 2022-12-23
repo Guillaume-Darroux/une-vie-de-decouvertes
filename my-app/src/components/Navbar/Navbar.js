@@ -1,50 +1,63 @@
-import React, { PureComponent } from 'react'
-import { Menu } from 'semantic-ui-react'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { Menu } from 'semantic-ui-react';
 import './styles.scss';
 
-export default class Navbar extends PureComponent {
-  state = { activeItem: 'home' }
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
-  render() {
-    const { activeItem } = this.state
-
+function Navbar() {
     return (
       <div className="navbar">
-        <Menu pointing secondary className='navbar-menu'>
-          <Menu.Item
-            name='Accueil'
-            active={activeItem === 'Accueil'}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name='A propos'
-            active={activeItem === 'A propos'}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name='Blog'
-            active={activeItem === 'Blog'}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name='Formules / Tarifs'
-            active={activeItem === 'Formules / Tarifs'}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name='Services / Réservations'
-            active={activeItem === 'Services / Réservations'}
-            onClick={this.handleItemClick}
-          />
-           <Menu.Item
-            name='Contact'
-            active={activeItem === 'Contact'}
-            onClick={this.handleItemClick}
-          />
+        <Menu className="navbar-menu" text>
+            <Menu.Item
+                as={NavLink}
+                to="/"
+                className='navbar-menu-link'
+                end
+            >
+                ACCUEIL
+            </Menu.Item>
+            <Menu.Item
+                as={NavLink}
+                to="/about"
+                className='navbar-menu-link'
+                end
+            >
+                A PROPOS
+            </Menu.Item>
+            <Menu.Item
+                as={NavLink}
+                to="/blog"
+                className='navbar-menu-link'
+                end
+            >
+                BLOG
+            </Menu.Item>
+            <Menu.Item
+                as={NavLink}
+                to="prices"
+                className='navbar-menu-link'
+                end
+            >
+                FORMULES / TARIFS
+            </Menu.Item>
+            <Menu.Item
+                as={NavLink}
+                to="/booking"
+                className='navbar-menu-link'
+                end
+            >
+                SERVICES / RESERVATIONS
+            </Menu.Item>
+            <Menu.Item
+                as={NavLink}
+                to="/contact"
+                className='navbar-menu-link'
+                end
+            >
+                CONTACT
+            </Menu.Item>
         </Menu>
       </div>
     )
   }
-}
+
+  export default React.memo(Navbar);

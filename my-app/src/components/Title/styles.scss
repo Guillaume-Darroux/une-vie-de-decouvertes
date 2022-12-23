@@ -1,14 +1,9 @@
-.title {
-    display: flex;
-    justify-content: center;
-
-    h1 {
-        width: 75%;
+.title h1 {
+        width: 1200px;
         margin: auto;
         color: grey;
         font-size: 7rem;
         font-weight: lighter;
         border-bottom: 2px solid black;
         padding-bottom: 2rem;
-    }
 }
