@@ -13,7 +13,7 @@ class Contact extends PureComponent {
     return (
       <div className="form-container">
         <h2 className='contact-section'>CONTACT</h2>
-        <Form action="https://formsubmit.co/g.darroux@gmail.com" method="POST">
+        <Form action="https://formsubmit.co/celine.collet75@gmail.com" method="POST">
             <Form.Group widths='equal'>
                 <Form.Input fluid type="text" name="Prénom" placeholder='Votre prénom' required />
                 <Form.Input fluid type="text" name="Nom" placeholder='Votre nom' required />
