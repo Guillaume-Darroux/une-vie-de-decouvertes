@@ -12,16 +12,16 @@ class Contact extends PureComponent {
     //const { value } = this.state
     return (
       <div className="form-container">
-        <h2 className='news-title'>CONTACT</h2>
-        <Form>
+        <h2 className='contact-section'>CONTACT</h2>
+        <Form action="https://formsubmit.co/g.darroux@gmail.com" method="POST">
             <Form.Group widths='equal'>
-                <Form.Input fluid placeholder='Votre prénom' />
-                <Form.Input fluid placeholder='Votre nom' />
+                <Form.Input fluid type="text" name="Prénom" placeholder='Votre prénom' required />
+                <Form.Input fluid type="text" name="Nom" placeholder='Votre nom' required />
             </Form.Group>
             <Form.Group widths='equal'>
-                <Form.Input fluid placeholder='Votre email' />
+                <Form.Input fluid type="email" name="email" placeholder='Votre email' required  />
             </Form.Group>
-            <Form.TextArea placeholder='Votre message...' />
+            <Form.TextArea className="textarea" name="message" placeholder='Votre message...' />
             <Form.Button>Envoyer</Form.Button>
         </Form>
     </div>
