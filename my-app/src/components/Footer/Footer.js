@@ -8,6 +8,7 @@ import linkedinLogo from '../../assets/images/linkedin.svg';
 // import logoYoutube from '../../assets/images/youtube.svg';
 
 import './styles.scss';
+import { NavHashLink } from 'react-router-hash-link';
   
 function Footer() {
     const instagramUrl = "https://www.instagram.com/uneviededecouvertes/";
@@ -58,8 +59,8 @@ function Footer() {
                 SERVICES / RESERVATIONS
             </Menu.Item>
             <Menu.Item
-                as={NavLink}
-                to="/contact"
+                as={NavHashLink}
+                to="/#contact-form"
                 className='footer-menu-link'
                 end
             >

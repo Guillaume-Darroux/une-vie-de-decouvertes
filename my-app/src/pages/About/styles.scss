@@ -27,8 +27,8 @@
     justify-content: center;
     
     &-picture {
-        width: 440px;
-        height: 560px;
+        width: 220px;
+        height: 280px;
         // height: 300px;
         margin: vars.$gutter * 0.75;
     }
@@ -36,23 +36,22 @@
     &-resume {
         // height: 300px;
         // width: 450px;
-        width: 441px;
+        width: 882px;
         height: 560px;
-        padding: vars.$gutter;
+        //padding: vars.$gutter;
         margin: vars.$gutter * 0.75;
-        background-color: #E0C0A9;
-        display: flex;
+/*         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        align-items: center;
+        align-items: center; */
+        font-size: 2rem;
+        line-height: 1.5;
+        text-align: center;
+        /* padding: vars.$gutter * 1.5;
+        padding-bottom: 0; */
         
-        &-text {
-            font-size: 2rem;
-            line-height: 1.5;
-            text-align: center;
-            padding: vars.$gutter * 1.5;
-            padding-bottom: 0;
-        }
+        //&-text {
+        //}
 
         &-button {
             width: fit-content;

@@ -41,8 +41,8 @@ function App() {
         <Route path="/about" element={<About />}></Route>
 {/*         <Route path="/blog" element={<Blog />}></Route>
         <Route path="/prices" element={<Prices />}></Route>
-        <Route path="/booking" element={<Booking />}></Route> */}
-        <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/booking" element={<Booking />}></Route>
+        <Route path="/#contact-form" element={<Contact />}></Route> */}
         <Route path="*" element={<Page404 />}></Route>
       </Routes>
       <Footer />

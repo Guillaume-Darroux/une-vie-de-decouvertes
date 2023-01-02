@@ -11,7 +11,7 @@ class Contact extends PureComponent {
   render() {
     //const { value } = this.state
     return (
-      <div className="form-container">
+      <div className="form-container" id="contact-form">
         <h2 className='contact-section'>CONTACT</h2>
         <Form action="https://formsubmit.co/celine.collet75@gmail.com" method="POST">
             <Form.Group widths='equal'>

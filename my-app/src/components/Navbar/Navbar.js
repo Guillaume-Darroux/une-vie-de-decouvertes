@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 import { Menu } from 'semantic-ui-react';
 import './styles.scss';
 
@@ -48,8 +49,8 @@ function Navbar() {
                 SERVICES / RESERVATIONS
             </Menu.Item>
             <Menu.Item
-                as={NavLink}
-                to="/contact"
+                as={NavHashLink}
+                to="/#contact-form"
                 className='navbar-menu-link'
                 end
             >
