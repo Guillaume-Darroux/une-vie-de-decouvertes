@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Card, Image } from 'semantic-ui-react';
-import imgOsteo from "/var/www/html/Projet-dev/une-vie-de-decouvertes/my-app/src/assets/images/osteo.jpg"
+import imgOsteo from "../../assets/images/osteo.jpg"
 
 import './styles.scss';
 
