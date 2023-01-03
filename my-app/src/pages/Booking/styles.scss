@@ -1,0 +1,37 @@
+.title-booking {
+    
+    &-text {
+        width: 1000px;
+        margin: auto;
+        color: grey;
+        font-size: 5rem;
+        font-weight: lighter;
+        border-bottom: 2px solid black;
+        padding-bottom: 2rem;
+    }
+
+        &-section {
+        padding-top: 5rem;
+        margin: auto;
+        width: 400px;
+        font-weight: lighter;
+        border-bottom: 2px solid black;
+
+    }
+}
+
+#booking-h2 {
+    margin-bottom: 5rem;
+}
+
+.booking-content {
+    display: flex;
+    justify-content: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    width: 1400px;
+    margin-bottom: 5rem;
+}
