@@ -1,9 +1,8 @@
 import React from 'react';
-import photo1 from '../../assets/images/pexels-jane-doan-1132047.jpg';
-import photo2 from '../../assets/images/pexels-matteo-milan-11220223.jpg';
-import photo3 from '../../assets/images/pexels-polina-tankilevitch-8539083.jpg';
+import Posts from '../Posts/Posts';
 
 import './styles.scss';
+
 
 function News() {
     
@@ -11,21 +10,7 @@ function News() {
         <div className='news'>
             <h2 className='news-title'>ACTUALITES</h2>
             <div className='news-content'>
-                <div className='article'>
-                    <div className="article-image">
-                        <img src={photo1} alt="Photo d'article" />
-                    </div>
-                    <div className="article-text"> Lorem ipsum dolor sit amet consectetur...
-                    </div>
-                </div>
-                <div className='article'>
-                <img className="article-image" src={photo2} alt="Photo d'article" />
-                    <div className="article-text">Lorem ipsum dolor quo hic sit ...</div>
-                </div>
-                <div className='article'>
-                <img className="article-image" src={photo3} alt="Photo d'article" />
-                    <div className="article-text">Lorem ipsum dolor sit ea alias...</div>
-                </div>
+                <Posts />
             </div>
         </div>
     )
