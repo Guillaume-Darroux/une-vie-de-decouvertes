@@ -72,12 +72,12 @@ console.log(sortedPosts)
     function handleChange(event) {
         const searchedTerm = event.target.value;
         setSearchTerm(searchedTerm);
-        console.log(searchedTerm);
+        // Si le champ de recherche est vide, on affiche tous les posts
         if(searchedTerm === "") {
             setFilteredPosts(posts);
         } else {
             const searchedPosts = posts?.filter((post) => {
-                const lowerCaseSearchTerm = searchedTerm.toLowerCase();
+                const lowerCaseSearchTerm = searchedTerm.toLowerCase(); // searchedTerm pour éviter le délai du setSearchTerm
                 const lowerCasePostTitle = post.attributes.title.toLowerCase();
                 const lowerCasePostContent = post.attributes.content.toLowerCase();
                 return (
@@ -112,12 +112,13 @@ console.log(sortedPosts)
                         <SearchInput value={searchTerm} onChange={handleChange} />     
                     </div>
                 </div>
-                <Grid className="posts-container" centered container stackable >
+
+                <Grid className="posts-container" centered container stackable>
                 {isLoading ?
                         "Loading..."
                     :
                         filteredPosts.map((post) => (
-                            <Link to={`/posts/${post.id}`}>
+                            <Link to={`/posts/${post.id}`} className="blog-post-link">
                                 <Card key={post.id} className="posts-container-post">
                                     <Image className="article-image" src={
                                         post.attributes.image.data.attributes.formats.small !== undefined ?

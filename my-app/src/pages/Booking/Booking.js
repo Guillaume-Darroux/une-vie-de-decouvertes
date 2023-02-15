@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card, Image } from 'semantic-ui-react';
 import imgOsteo from "../../assets/images/osteo.jpg"
+import { PopupButton } from "react-calendly";
 
 import './styles.scss';
 
@@ -13,6 +14,7 @@ function Booking() {
             </div>
 
             <div className='booking-content'>
+            
                 <div className="card-container">
                     <div>
                         <Card
@@ -27,7 +29,13 @@ function Booking() {
                             <Card.Description>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores eius fuga placeat? Exercitationem, animi consequatur ipsum eum commodi neque deserunt voluptatibus eius natus labore expedita quis fuga amet quidem molestiae!
                             </Card.Description>
-                            <Button className="booking-osteo-button" secondary>Réserver</Button>
+                            <PopupButton
+                                className="calendly-booking-button"
+                                url="https://calendly.com/g-darroux/osteo-reflexologie"
+                                rootElement={document.getElementById("root")}
+                                text="Réserver"
+                            />
+                            {/* <Button className="booking-osteo-button" secondary>Réserver</Button> */}
                         </Card.Content>
                         </Card>
                     </div>
@@ -44,7 +52,13 @@ function Booking() {
                             <Card.Description>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores eius fuga placeat? Exercitationem, animi consequatur ipsum eum commodi neque deserunt voluptatibus eius natus labore expedita quis fuga amet quidem molestiae!
                             </Card.Description>
-                            <Button className="booking-digestive-button" secondary>Réserver</Button>
+                            <PopupButton
+                                className="calendly-booking-button"
+                                url="https://calendly.com/g-darroux/troubles-digestifs"
+                                rootElement={document.getElementById("root")}
+                                text="Réserver"
+                            />
+                            {/* <Button className="booking-digestive-button" secondary>Réserver</Button> */}
                         </Card.Content>
                         </Card>
                     </div>
@@ -61,7 +75,13 @@ function Booking() {
                             <Card.Description>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores eius fuga placeat? Exercitationem, animi consequatur ipsum eum commodi neque deserunt voluptatibus eius natus labore expedita quis fuga amet quidem molestiae!
                             </Card.Description>
-                            <Button className="booking-skin-button" secondary>Réserver</Button>
+                            <PopupButton
+                                className="calendly-booking-button"
+                                url="https://calendly.com/g-darroux/problemes-de-peau"
+                                rootElement={document.getElementById("root")}
+                                text="Réserver"
+                            />
+                            {/* <Button className="booking-skin-button" secondary>Réserver</Button> */}
                         </Card.Content>
                         </Card>
                     </div>
@@ -78,7 +98,13 @@ function Booking() {
                             <Card.Description>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores eius fuga placeat? Exercitationem, animi consequatur ipsum eum commodi neque deserunt voluptatibus eius natus labore expedita quis fuga amet quidem molestiae!
                             </Card.Description>
-                            <Button className="booking-allergy-button" secondary>Réserver</Button>
+                            <PopupButton
+                                className="calendly-booking-button"
+                                url="https://calendly.com/g-darroux/allergies"
+                                rootElement={document.getElementById("root")}
+                                text="Réserver"
+                            />
+                            {/* <Button className="booking-allergy-button" secondary>Réserver</Button> */}
                         </Card.Content>
                         </Card>
                     </div>
