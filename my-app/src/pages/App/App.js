@@ -11,6 +11,7 @@ import About from '../About/About';
 import Page404 from '../404/404';
 import './styles.scss';
 import Booking from '../Booking/Booking';
+import Post from '../Post/Post';
 
 function App() {
   const osteo = "Qu'est-ce-que l'osteoreflexologie ?";
@@ -40,6 +41,7 @@ function App() {
           }
         />
         <Route path="/about" element={<About />}></Route>
+        <Route path="/posts/:id" element={<Post />}></Route>
         {/* <Route path="/blog" element={<Blog />}></Route>
         <Route path="/prices" element={<Prices />}></Route> */}
         <Route path="/booking" element={<Booking />}></Route>

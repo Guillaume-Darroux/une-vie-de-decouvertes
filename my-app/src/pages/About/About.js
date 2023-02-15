@@ -1,15 +1,15 @@
 import React from 'react';
 import photo from '../../assets/images/profil.jpg';
 
-import './styles.scss';
+import './style.scss';
 
 function About() {
     
     return (
         <>
-            <div className="title-about">
-                <h1 className="title-about-text">Une vie de découvertes</h1>
-                <h2 className='title-about-section'>A PROPOS</h2>
+            <div className="title-others">
+                <h1 className="title-others-text">Une vie de découvertes</h1>
+                <h2 className='title-others-section'>A PROPOS</h2>
             </div>
 
             <div className='about'>

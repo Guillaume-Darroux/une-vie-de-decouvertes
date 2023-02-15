@@ -1,6 +1,6 @@
 @use '../../styles/vars';
 
-.title-about {
+.title-others {
     
     &-text {
         width: 1000px;
@@ -29,7 +29,7 @@
     &-picture {
         width: 220px;
         height: 280px;
-        // height: 300px;
+         height: 300px;
         margin: vars.$gutter * 0.75;
     }
 
@@ -38,7 +38,7 @@
         // width: 450px;
         width: 882px;
         height: 560px;
-        //padding: vars.$gutter;
+        padding: vars.$gutter;
         margin: vars.$gutter * 0.75;
 /*         display: flex;
         flex-direction: column;
@@ -49,9 +49,6 @@
         text-align: center;
         /* padding: vars.$gutter * 1.5;
         padding-bottom: 0; */
-        
-        //&-text {
-        //}
 
         &-button {
             width: fit-content;

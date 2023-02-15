@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Image } from 'semantic-ui-react';
 import moment from 'moment';
+import { API_URL } from '../../utils/config';
 
-import photo1 from '../../assets/images/pexels-jane-doan-1132047.jpg';
+//import photo1 from '../../assets/images/pexels-jane-doan-1132047.jpg';
 //import photo2 from '../../assets/images/pexels-matteo-milan-11220223.jpg';
 //import photo3 from '../../assets/images/pexels-polina-tankilevitch-8539083.jpg';
 
 import "./style.scss";
+import { Link } from 'react-router-dom';
 
 function Posts () {
 
@@ -15,7 +17,7 @@ function Posts () {
 
     useEffect(() => {
         
-        fetch("http://localhost:1337/api/posts/?populate=*", 
+        fetch(`${API_URL}/posts/?populate=*`, 
         {
             method: "GET",
             headers: {
@@ -24,12 +26,12 @@ function Posts () {
         })
         .then(res => res.json())
         .then(res => {
-            // On convertit le "created_at" au format "DD/MM/YYYY" grâce à la librairie "moment"
+            // On rajoute un createdAt au format "DD/MM/YYYY" grâce à la librairie "moment"
             const format = "DD/MM/YYYY";
             const formatedDatePosts = res.data.map((post) => {
               return {
                 ...post,
-                createdAt: moment(post.createdAt).format(format)
+                createdAt: moment(post.attributes.createdAt).format(format)
               }
             });
             
@@ -40,12 +42,11 @@ function Posts () {
             const threePosts = reversedDatePosts.slice(0,3);
             setPosts(threePosts);
             setIsLoading(false);
-            console.log("threePosts", threePosts);
 
         })
 
     }, []);
-
+console.log("posts", posts)
     return (
         <>
             <Card.Group>
@@ -53,23 +54,25 @@ function Posts () {
                     "Loading..."
                 :
                     posts.map((post, index) => (
-                        <Card key={post.attributes.id+""+index}>{/* index obligatoire pour clé unique */}
-                            <Image className="article-image" src={
-                                post.attributes.image.data.attributes.formats.small !== undefined ?
-                                    "http://localhost:1337" +post.attributes.image.data.attributes.formats.small.url
-                                :
-                                    "..."
-                            } />
-                            <Card.Content>
-                                <Card.Header>{post.attributes.title}</Card.Header>
-                                <Card.Meta>
-                                    <span className='date'>{post.createdAt}</span>
-                                </Card.Meta>
-                                <Card.Description>
-                                {post.attributes.content.substring(0,150)} ...
-                                </Card.Description>
-                            </Card.Content>
-                        </Card>
+                        <Link to={`/posts/${post.id}`}>
+                            <Card key={post.id}>
+                                <Image className="article-image" src={
+                                    post.attributes.image.data.attributes.formats.small !== undefined ?
+                                        "http://localhost:1337" +post.attributes.image.data.attributes.formats.small.url
+                                    :
+                                        "..."
+                                } />
+                                <Card.Content>
+                                    <Card.Header>{post.attributes.title}</Card.Header>
+                                    <Card.Meta>
+                                        <span className='date'>{post.createdAt}</span>
+                                    </Card.Meta>
+                                    <Card.Description>
+                                    {post.attributes.content.substring(0,150)} ...
+                                    </Card.Description>
+                                </Card.Content>
+                            </Card>
+                        </Link>
                     ))
                     }
 
