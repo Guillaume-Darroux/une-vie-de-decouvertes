@@ -1,9 +1,16 @@
 .main-container {
-
+    margin-bottom: 4em;
 }
 
 .blog-navbar {
-    
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    & span {
+        cursor:pointer;
+    }
 }
 
 .ui.container.grid.posts-container {
@@ -12,6 +19,6 @@
 }
 
 .ui.card.posts-container-post {
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 4em;
+    margin-bottom: 4em;
 }
