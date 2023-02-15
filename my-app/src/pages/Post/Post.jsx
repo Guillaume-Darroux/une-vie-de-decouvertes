@@ -16,42 +16,43 @@ function Post () {
         
         console.log(id);
         
-        fetch(`${API_URL}/posts/${id}/?populate=*`)
+        fetch(`${API_URL}/api/posts/${id}/?populate=*`)
             .then(res => res.json())
             .then(res => {
-                const tempPost = res.data;
-                // On rajoute un createdAt au format "DD/MM/YYYY" grâce à la librairie "moment"
-                const format = "DD/MM/YYYY";
-                const formatedDatePost = {...tempPost, createdAt: moment(tempPost.attributes.createdAt).format(format)};
-                console.log("formatedDatePost", formatedDatePost);
-                setPost(formatedDatePost);
-                setIsLoading(false);
-            })
-    }, []);
+                const formatedPost = res.data;
 
+                // On formate la date de création
+                formatedPost.attributes.date = new Date(formatedPost.attributes.date).toLocaleDateString('fr-FR');
+                setPost(formatedPost);
+                setIsLoading(false);
+            });
+        }, []);
+        
+        console.log(post);
     return (
         <div className='post'>
             <div className="title-others">
                 <h1 className="title-others-text">Une vie de découvertes</h1>
                 <h2 className='title-others-section'>{post.attributes?.title}</h2>
             </div>
-            <Grid className="post-container" container>
-                <div className="post-date">Ecrit le : {post.createdAt}</div>
-                <div className="post-image">
-                    {isLoading ?
-                        "Loading..."
-                        :
-                        <Image src={
-                            post.attributes.image?.data.attributes.formats.medium?.url !== undefined ?
-                            "http://localhost:1337" +post.attributes.image?.data.attributes.formats.medium?.url
-                            :
-                            null
-                            }
-                        />
-                    }
-                </div>
-                <p className="post-content">{post.attributes?.content}</p>
-            </Grid>
+            {isLoading
+                ?
+                    null
+                :
+                    <Grid className="post-container" container>
+                        <div className="post-date"><span>{post.attributes.category} </span>Ecrit le : {post.attributes.date}</div>
+                        <div className="post-image">
+                            <Image src={
+                                post.attributes.image?.data.attributes.formats.medium?.url !== undefined ?
+                                `${API_URL + post.attributes.image?.data.attributes.formats.medium?.url}`
+                                :
+                                null
+                                }
+                            />
+                        </div>
+                        <p className="post-content">{post.attributes?.content}</p>
+                    </Grid>
+            }
         </div>
     )
 }
