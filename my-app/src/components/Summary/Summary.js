@@ -9,7 +9,7 @@ function Summary() {
     
     return (
         <div className='summary'>
-            <img src={photo} alt="Photo de Celine C." className="summary-picture"/>
+            <img src={photo} alt="Celine C." className="summary-picture"/>
             <div className="summary-resume">
                 <p className="summary-resume-text">Naturopathe-Coach, je suis basée en Haute Savoie. Je partage ici mon amour de la médecine holistique</p>
                 <Button as={NavLink} to="/about" className="summary-resume-button" secondary>Lire plus</Button>
