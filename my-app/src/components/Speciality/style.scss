@@ -1,0 +1,38 @@
+.ui.container.grid.specialities-container {
+    margin-top: 2em;
+    min-height: 60vh;
+}
+
+.ui.card {
+    
+    &.speciality-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 4em 0;
+        height: 500px;
+    }
+}
+
+.calendly-booking-button {
+    color: #fff;
+    background-color:#1b1c1d;
+    box-shadow: 0 0 0 0 rgb(34 36 38 / 15%) inset;
+    text-shadow: none;
+    background-image: none;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    line-height: 1em;
+    border: 1px solid transparent;
+    border-radius: .28571429rem;
+    outline: 0;
+    margin: 2em .25em 1em 0;
+    padding: .78571429em 1.5em .78571429em;
+ 
+    &:hover {
+        color: #1b1c1d;
+        background-color: #fff;
+        border: 1px solid #1b1c1d;
+    }
+}

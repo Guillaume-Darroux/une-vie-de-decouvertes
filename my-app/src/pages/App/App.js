@@ -13,29 +13,22 @@ import './styles.scss';
 import Booking from '../Booking/Booking';
 import Post from '../Post/Post';
 import Blog from '../Blog/Blog';
+import Specialities from '../../components/Specialities/Specialities';
+import { Segment } from 'semantic-ui-react';
 
 function App() {
-  const osteo = "Qu'est-ce-que l'osteoreflexologie ?";
-  const digestive = "Qu'est-ce-que l'on entend par troubles digestifs ?";
-  const skin = "Explications sur les problèmes de peau.";
-  const allergy = "Explications sur les allergies.";
+
   return (
     <div className="App">
       <Navbar /> 
-      <Routes>
+      <Segment><Routes>
         <Route
           path="/"
           element={
             <>
               <Title />
               <Summary />
-                <h2 className="specialities">MES SPECIALITES</h2>
-                <p className="specialities-names">
-                  <div className="osteoreflexology" data-tooltip={osteo}>Ostéoreflexologie</div>
-                  <div className="digestive" data-tooltip={digestive}>Troubles digestifs</div>
-                  <div className="skin" data-tooltip={skin}>Problèmes de peau</div>
-                  <div className="allergy" data-tooltip={allergy}>Allergies</div>
-                </p>
+                <Specialities />
               <News />
               <Contact />
             </>
@@ -44,11 +37,10 @@ function App() {
         <Route path="/about" element={<About />}></Route>
         <Route path="/posts/:id" element={<Post />}></Route>
         <Route path="/blog" element={<Blog />}></Route>
-        {/* <Route path="/prices" element={<Prices />}></Route> */}
         <Route path="/booking" element={<Booking />}></Route>
-        {/* <Route path="/#contact-form" element={<Contact />}></Route> */}
         <Route path="*" element={<Page404 />}></Route>
       </Routes>
+      </Segment>
       <Footer />
     </div>
   );

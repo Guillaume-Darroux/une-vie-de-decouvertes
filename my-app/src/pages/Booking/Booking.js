@@ -1,114 +1,22 @@
 import React from 'react';
-import { Button, Card, Image } from 'semantic-ui-react';
-import imgOsteo from "../../assets/images/osteo.jpg"
-import { PopupButton } from "react-calendly";
+import Speciality from '../../components/Speciality/Speciality';
 
 import './styles.scss';
 
 function Booking() {
+
     return (
         <>
             <div className="title-booking">
                 <h1 className="title-booking-text">Une vie de découvertes</h1>
-                <h2 id="booking-h2" className='title-booking-section'>SERVICES / RESERVATIONS</h2>
+                <h2 id="booking-h2" className='title-booking-section'>PRESTATIONS / FORMULES</h2>
             </div>
 
             <div className='booking-content'>
             
-                <div className="card-container">
-                    <div>
-                        <Card
-                        className="speciality-card osteo-card"
-                        >
-                        <Image src={imgOsteo} wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Osteoreflexologie</Card.Header>
-                            <Card.Meta>
-                                durée : 45 min
-                            </Card.Meta>
-                            <Card.Description>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores eius fuga placeat? Exercitationem, animi consequatur ipsum eum commodi neque deserunt voluptatibus eius natus labore expedita quis fuga amet quidem molestiae!
-                            </Card.Description>
-                            <PopupButton
-                                className="calendly-booking-button"
-                                url="https://calendly.com/g-darroux/osteo-reflexologie"
-                                rootElement={document.getElementById("root")}
-                                text="Réserver"
-                            />
-                            {/* <Button className="booking-osteo-button" secondary>Réserver</Button> */}
-                        </Card.Content>
-                        </Card>
-                    </div>
-                    <div>
-                        <Card
-                        className="speciality-card digestive-card"
-                        >
-                        <Image src={imgOsteo} wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Troubles digestifs</Card.Header>
-                            <Card.Meta>
-                                Durée : 1h30
-                            </Card.Meta>
-                            <Card.Description>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores eius fuga placeat? Exercitationem, animi consequatur ipsum eum commodi neque deserunt voluptatibus eius natus labore expedita quis fuga amet quidem molestiae!
-                            </Card.Description>
-                            <PopupButton
-                                className="calendly-booking-button"
-                                url="https://calendly.com/g-darroux/troubles-digestifs"
-                                rootElement={document.getElementById("root")}
-                                text="Réserver"
-                            />
-                            {/* <Button className="booking-digestive-button" secondary>Réserver</Button> */}
-                        </Card.Content>
-                        </Card>
-                    </div>
-                    <div>
-                        <Card
-                        className="speciality-card skin-card"
-                        >
-                        <Image src={imgOsteo} wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Problèmes de peau</Card.Header>
-                            <Card.Meta>
-                                Durée : 1h00
-                            </Card.Meta>
-                            <Card.Description>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores eius fuga placeat? Exercitationem, animi consequatur ipsum eum commodi neque deserunt voluptatibus eius natus labore expedita quis fuga amet quidem molestiae!
-                            </Card.Description>
-                            <PopupButton
-                                className="calendly-booking-button"
-                                url="https://calendly.com/g-darroux/problemes-de-peau"
-                                rootElement={document.getElementById("root")}
-                                text="Réserver"
-                            />
-                            {/* <Button className="booking-skin-button" secondary>Réserver</Button> */}
-                        </Card.Content>
-                        </Card>
-                    </div>
-                    <div>
-                        <Card
-                        className="speciality-card allergy-card"
-                        >
-                        <Image src={imgOsteo} wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>Allergies</Card.Header>
-                            <Card.Meta>
-                                Durée : 30 min
-                            </Card.Meta>
-                            <Card.Description>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores eius fuga placeat? Exercitationem, animi consequatur ipsum eum commodi neque deserunt voluptatibus eius natus labore expedita quis fuga amet quidem molestiae!
-                            </Card.Description>
-                            <PopupButton
-                                className="calendly-booking-button"
-                                url="https://calendly.com/g-darroux/allergies"
-                                rootElement={document.getElementById("root")}
-                                text="Réserver"
-                            />
-                            {/* <Button className="booking-allergy-button" secondary>Réserver</Button> */}
-                        </Card.Content>
-                        </Card>
-                    </div>
-                </div>
+                
+                    <Speciality />
+                
             </div>
         </>
     )

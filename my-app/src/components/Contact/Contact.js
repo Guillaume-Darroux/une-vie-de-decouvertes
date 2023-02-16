@@ -22,7 +22,7 @@ class Contact extends PureComponent {
                 <Form.Input fluid type="email" name="email" placeholder='Votre email' required  />
             </Form.Group>
             <Form.TextArea className="textarea" name="message" placeholder='Votre message...' />
-            <Form.Button>Envoyer</Form.Button>
+            <Form.Button id="contact-send-button">Envoyer</Form.Button>
         </Form>
     </div>
     )

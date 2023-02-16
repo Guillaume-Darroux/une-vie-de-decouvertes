@@ -13,6 +13,7 @@ function Blog() {
     const [categories, setCategories] = useState(null);
     const [filteredPosts, setFilteredPosts] = useState(null);
     const [searchTerm, setSearchTerm] = useState("");
+    const [activeCategory, setActiveCategory] = useState("tout");
 
     useEffect(() => {
         
@@ -30,7 +31,7 @@ function Blog() {
                 return new Date(b.attributes.publishedAt) - new Date(a.attributes.publishedAt);
                 //TODO: Tri par date de publication, voir pour changer et le faire par date
               });
-console.log(sortedPosts)
+
             // On formate la date de création
             const formatedPosts = sortedPosts.map((post) => {
                 post.attributes.date = new Date(post.attributes.date).toLocaleDateString('fr-FR');
@@ -38,10 +39,13 @@ console.log(sortedPosts)
             }); 
             
             // On récupère la liste des catégories
-            const categories = formatedPosts.map((post) => {
+            const allCategories = formatedPosts.map((post) => {
                 return post.attributes.category;
             });
             
+            // On supprime les doublons
+            const categories = [...new Set(allCategories)];
+
             setPosts(formatedPosts);
             setFilteredPosts(formatedPosts);
             setCategories(categories);
@@ -51,7 +55,7 @@ console.log(sortedPosts)
     }, []);
 
     // Gestion de la sélection d'une catégorie
-    function handleClick(event) {
+   /*  function handleClick(event) {
         //TODO: Indicatif visuel que la catégorie est sélectionnée
         const category = event.target.innerHTML;
         
@@ -60,13 +64,30 @@ console.log(sortedPosts)
         });
         
         setFilteredPosts(filteredPosts);
+    } */
+
+    // Gestion du clic sur une catégorie
+    function handleCategoryClick(category) {
+        // Si on a cliqué sur "tout", on affiche tous les posts
+        if(category === "tout") {
+            console.log("categorie TOUT");
+            setFilteredPosts(posts);
+        } else {
+            console.log("categorie: ", category );
+            // Sinon, on filtre les posts de la catégorie sélectionnée
+            const filteredPosts = posts.filter((post) => {
+                return post.attributes.category.trim() === category.trim();
+            });
+            
+            setFilteredPosts(filteredPosts);
+        }
+        setActiveCategory(category);
     }
 
-    // Réinitialisation de la recherche
-    function handleClickReset(event) {
-        //TODO: Réinitialiser l'indicateur visuel de la catégorie sélectionnée
-        setFilteredPosts(posts);
-    }
+    // Fonction qui applique la classe "active" si la catégorie est sélectionnée
+    function isActive(category) {
+        return category === activeCategory ? "active" : "";
+    };
 
     // Gestion de la recherche
     function handleChange(event) {
@@ -86,6 +107,7 @@ console.log(sortedPosts)
                     lowerCasePostContent.includes(lowerCaseSearchTerm)
                     );
             });
+
             setFilteredPosts(searchedPosts);
         }
     }
@@ -94,19 +116,26 @@ console.log(sortedPosts)
         <>
             <div className="title-others">
                 <h1 className="title-others-text">Une vie de découvertes</h1>
-                <h2 className='title-others-section'>BLOG</h2>
+                {/* <h2 className='title-others-section'>BLOG</h2> */}
             </div>
             <div className="main-container">
                 <div className="blog-navbar">
                     <div className="blog-navbar-categories">
-                        Catégories: <span cursor="grab" onClick={handleClickReset}> TOUT </span> {isLoading
-                                        ?
-                                            null
-                                        :
-                                            categories.map((category) => (
-                                                <span onClick={handleClick}> {category} </span>
-                                            ))
-                                        }
+                        <span
+                            className={`posts-categories ${isActive("tout")}`}
+                            cursor="grab"
+                            onClick={() => handleCategoryClick("tout")}
+                        > tout
+                        </span>
+                        {/* Affichage de catégories */}
+                        {isLoading
+                            ?
+                                null
+                            :
+                                categories.map((category) => (
+                                    <span className={`posts-categories ${isActive(category)}`} onClick={() =>handleCategoryClick(category)}> {category} </span>
+                                ))
+                            }
                     </div>
                     <div className="blog-navbar-search">
                         <SearchInput value={searchTerm} onChange={handleChange} />     

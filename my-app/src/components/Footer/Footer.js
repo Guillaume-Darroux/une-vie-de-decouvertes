@@ -44,19 +44,11 @@ function Footer() {
             </Menu.Item>
             <Menu.Item
                 as={NavLink}
-                to="prices"
-                className='footer-menu-link'
-                end
-            >
-                FORMULES / TARIFS
-            </Menu.Item>
-            <Menu.Item
-                as={NavLink}
                 to="/booking"
                 className='footer-menu-link'
                 end
             >
-                SERVICES / RESERVATIONS
+                PRESTATIONS / FORMULES
             </Menu.Item>
             <Menu.Item
                 as={NavHashLink}

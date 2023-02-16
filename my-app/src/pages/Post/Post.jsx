@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import moment from 'moment';
 import { API_URL } from '../../utils/config';
 import { Grid, Image } from 'semantic-ui-react'
 
@@ -13,8 +12,6 @@ function Post () {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        
-        console.log(id);
         
         fetch(`${API_URL}/api/posts/${id}/?populate=*`)
             .then(res => res.json())

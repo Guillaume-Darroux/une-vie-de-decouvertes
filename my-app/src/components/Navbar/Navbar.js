@@ -34,19 +34,11 @@ function Navbar() {
             </Menu.Item>
             <Menu.Item
                 as={NavLink}
-                to="prices"
-                className='navbar-menu-link'
-                end
-            >
-                FORMULES / TARIFS
-            </Menu.Item>
-            <Menu.Item
-                as={NavLink}
                 to="/booking"
                 className='navbar-menu-link'
                 end
             >
-                SERVICES / RESERVATIONS
+                PRESTATIONS / FORMULES
             </Menu.Item>
             <Menu.Item
                 as={NavHashLink}

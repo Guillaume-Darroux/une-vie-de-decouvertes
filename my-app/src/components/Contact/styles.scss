@@ -10,3 +10,26 @@
     font-weight: lighter;
     border-bottom: 2px solid black;
 }
+
+.ui {
+
+    &.fluid.input {
+        border: 1px solid rgb(102, 95, 95);
+        & input::placeholder {
+            color:rgb(102, 95, 95);}
+        
+    }
+
+}
+
+#contact-send-button {
+    margin-top: 2rem;
+}
+
+.field.textarea {
+    border: 1px solid rgb(102, 95, 95);
+
+    & textarea::placeholder {
+        color:rgb(102, 95, 95);
+    }
+}

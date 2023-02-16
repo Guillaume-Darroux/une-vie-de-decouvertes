@@ -4,9 +4,11 @@
 
 .blog-navbar {
     height: 150px;
+    width: 50%;
+    align-items: center;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin: 0 auto;
 
     & span {
         cursor:pointer;
@@ -22,3 +24,17 @@
     min-height: 60vh;
 }
 
+.posts-categories {
+    text-transform: uppercase;
+    margin: 0 0.5rem;
+    color: rgba(0,0,0,.6);
+
+    &:hover {
+        color:black;
+    }
+
+}
+
+.active {
+    color: black;
+}
