@@ -9,6 +9,7 @@ import linkedinLogo from '../../assets/images/linkedin.svg';
 
 import './styles.scss';
 import { NavHashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
   
 function Footer() {
     const instagramUrl = "https://www.instagram.com/uneviededecouvertes/";
@@ -71,6 +72,9 @@ function Footer() {
             </a>
             {/* <img src={logoPinterest} alt="Logo Pinterest" />
             <img src={logoYoutube} alt="Logo Youtube" /> */}
+        </div>
+        <div className="footer-mentions">
+        <p>© 2023 Guillaume Darroux - Tous droits réservés | <Link to="/mentions" className="footer-mentions">Mentions légales</Link></p>
         </div>
       </div>
     )

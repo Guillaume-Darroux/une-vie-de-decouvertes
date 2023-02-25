@@ -42,13 +42,13 @@ function Posts () {
 
     return (
         <>
-            <Card.Group>
+            <Card.Group className="card-group-container">
                 {isLoading ?
                     "Loading..."
                 :
                     posts.map((post) => (
                         <Link to={`/posts/${post.id}`}>
-                            <Card key={post.id}>
+                            <Card key={post.id} className="card-post">
                                 <Image className="article-image" src={
                                     post.attributes.image.data.attributes.formats.small !== undefined ?
                                         API_URL + post.attributes.image.data.attributes.formats.small.url

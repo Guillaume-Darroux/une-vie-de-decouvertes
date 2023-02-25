@@ -26,15 +26,14 @@ function Blog() {
         })
         .then(res => res.json())
         .then(res => {
-            // On trie les posts par date de création
+            // On trie les posts par date de publication
             const sortedPosts = res.data.sort((a, b) => {
                 return new Date(b.attributes.publishedAt) - new Date(a.attributes.publishedAt);
-                //TODO: Tri par date de publication, voir pour changer et le faire par date
               });
 
-            // On formate la date de création
+            // On formate la date de publication
             const formatedPosts = sortedPosts.map((post) => {
-                post.attributes.date = new Date(post.attributes.date).toLocaleDateString('fr-FR');
+                post.attributes.date = new Date(post.attributes.publishedAt).toLocaleDateString('fr-FR');
                 return post;
             }); 
             
@@ -54,26 +53,12 @@ function Blog() {
         
     }, []);
 
-    // Gestion de la sélection d'une catégorie
-   /*  function handleClick(event) {
-        //TODO: Indicatif visuel que la catégorie est sélectionnée
-        const category = event.target.innerHTML;
-        
-        const filteredPosts = posts.filter((post) => {
-            return post.attributes.category.trim() === category.trim();
-        });
-        
-        setFilteredPosts(filteredPosts);
-    } */
-
     // Gestion du clic sur une catégorie
     function handleCategoryClick(category) {
         // Si on a cliqué sur "tout", on affiche tous les posts
         if(category === "tout") {
-            console.log("categorie TOUT");
             setFilteredPosts(posts);
         } else {
-            console.log("categorie: ", category );
             // Sinon, on filtre les posts de la catégorie sélectionnée
             const filteredPosts = posts.filter((post) => {
                 return post.attributes.category.trim() === category.trim();
