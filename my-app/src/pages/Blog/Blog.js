@@ -134,12 +134,12 @@ function Blog() {
                         filteredPosts.map((post) => (
                             <Link to={`/posts/${post.id}`} className="blog-post-link">
                                 <Card key={post.id} className="posts-container-post">
-                                    <Image className="article-image" src={
+                                    <Image className="blog-article-image" src={
                                         post.attributes.image.data.attributes.formats.small !== undefined ?
                                             API_URL + post.attributes.image.data.attributes.formats.small.url
                                         :
                                             "..."
-                                    } />
+                                    } wrapped/>
                                     <Card.Content>
                                         <Card.Header>{post.attributes.title}</Card.Header>
                                         <Card.Meta>

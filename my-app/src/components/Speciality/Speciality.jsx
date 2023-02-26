@@ -36,14 +36,14 @@ function Speciality () {
                 "Loading..."
             :
                 specialities.map((speciality) => (
-                        <div>
+                        
                             <Card key={speciality.id} className="specialities-container-post">
                                 <Image className="speciality-image" src={
                                     speciality.attributes.image.data.attributes !== undefined ?
                                         API_URL + speciality.attributes.image.data.attributes.url
                                     :
                                         "..."
-                                } />
+                                } wrapped />
                                 <Card.Content>
                                     <Card.Header>{speciality.attributes.name}</Card.Header>
                                     <Card.Meta>
@@ -60,7 +60,7 @@ function Speciality () {
                                     />
                                 </Card.Content>
                             </Card>
-                        </div>
+                        
                 ))
             }
         </Grid>

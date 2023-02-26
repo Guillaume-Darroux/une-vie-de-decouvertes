@@ -6,3 +6,13 @@
 .ui.cards.card-group-container {
     flex-wrap: nowrap;
 }
+
+.ui.image.post-article-image {
+    height: 50%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.content.post-card-content {
+    height: 50%;
+}

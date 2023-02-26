@@ -13,10 +13,7 @@ function Booking() {
             </div>
 
             <div className='booking-content'>
-            
-                
                     <Speciality />
-                
             </div>
         </>
     )

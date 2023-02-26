@@ -33,24 +33,33 @@
         object-fit: cover;
         margin: vars.$gutter * 0.75;
     }
-
+    
     &-resume {
         // height: 300px;
         // width: 450px;
+        font-family: "TimesSansSerif", sans-serif;
         width: 30%;
         height: auto;
-        padding: vars.$gutter;
+        padding: 0 vars.$gutter;
         margin: vars.$gutter * 0.75;
         text-align: justify;
-        font-size: 1.3rem;
+        font-size: 1.15rem;
         line-height: 1.5;
 
+        &-h2 {
+            font-family: "TimesSansSerif", sans-serif;
+            padding-bottom: 2rem;
+        }
         /*         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center; */
         /* padding: vars.$gutter * 1.5;
         padding-bottom: 0; */
+
+        &-span-bold {
+            font-weight: bold;
+        }
 
         &-button {
             width: fit-content;

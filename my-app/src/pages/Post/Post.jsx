@@ -18,8 +18,8 @@ function Post () {
             .then(res => {
                 const formatedPost = res.data;
 
-                // On formate la date de création
-                formatedPost.attributes.date = new Date(formatedPost.attributes.date).toLocaleDateString('fr-FR');
+                // On formate la date de publication
+                formatedPost.attributes.date = new Date(formatedPost.attributes.publishedAt).toLocaleDateString('fr-FR');
                 setPost(formatedPost);
                 setIsLoading(false);
             });
@@ -37,7 +37,14 @@ function Post () {
                     null
                 :
                     <Grid className="post-container" container>
-                        <div className="post-date"><span>{post.attributes.category} </span>Ecrit le : {post.attributes.date}</div>
+                        <div className="post-date">
+                            <span>
+                                {post.attributes.category}
+                            </span>
+                            <p>
+                                Ecrit le : {post.attributes.date}
+                            </p>
+                        </div>
                         <div className="post-image">
                             <Image src={
                                 post.attributes.image?.data.attributes.formats.medium?.url !== undefined ?
