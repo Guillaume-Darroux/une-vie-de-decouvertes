@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { API_URL } from '../../utils/config';
-import { Card, Grid, Image } from 'semantic-ui-react';
+import { Card, Divider, Grid, Image } from 'semantic-ui-react';
 import { PopupButton } from "react-calendly";
 
 import "./style.scss";
@@ -50,6 +50,7 @@ function Speciality () {
                                         <span className='duration'>{speciality.attributes.duration}</span>
                                     </Card.Meta>
                                     <Card.Description>
+                                    <Divider />
                                     {speciality.attributes.description.substring(0,150)} ...
                                     </Card.Description>
                                     <PopupButton

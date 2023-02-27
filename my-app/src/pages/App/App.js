@@ -15,6 +15,7 @@ import Post from '../Post/Post';
 import Blog from '../Blog/Blog';
 import Specialities from '../../components/Specialities/Specialities';
 import { Segment } from 'semantic-ui-react';
+import Mentions from '../Mentions/Mentions';
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
         <Route path="/posts/:id" element={<Post />}></Route>
         <Route path="/blog" element={<Blog />}></Route>
         <Route path="/booking" element={<Booking />}></Route>
+        <Route path="/mentions" element={<Mentions />}></Route>
         <Route path="*" element={<Page404 />}></Route>
       </Routes>
       </Segment>

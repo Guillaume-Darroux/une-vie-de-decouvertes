@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { API_URL } from '../../utils/config';
-import { Card, Image } from 'semantic-ui-react';
+import { Card, Divider, Image, Segment } from 'semantic-ui-react';
 
 import "./style.scss";
 import { Link } from 'react-router-dom';
@@ -50,8 +50,8 @@ function Posts () {
                         <Link to={`/posts/${post.id}`}>
                             <Card key={post.id} className="card-post">
                                 <Image className="post-article-image" src={
-                                    post.attributes.image.data.attributes.formats.small !== undefined ?
-                                        API_URL + post.attributes.image.data.attributes.formats.small.url
+                                    post.attributes.image.data.attributes.url !== undefined ?
+                                        API_URL + post.attributes.image.data.attributes.url
                                     :
                                         "..."
                                 } wrapped/>
@@ -61,6 +61,7 @@ function Posts () {
                                         <span className='date'>{post.attributes.date}</span>
                                     </Card.Meta>
                                     <Card.Description>
+                                    <Divider />
                                     {post.attributes.content.substring(0,150)} ...
                                     </Card.Description>
                                 </Card.Content>

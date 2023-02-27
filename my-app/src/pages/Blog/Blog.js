@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { API_URL } from '../../utils/config';
 import { Link } from 'react-router-dom';
-import { Card, Grid, Image } from 'semantic-ui-react';
+import { Card, Divider, Grid, Image } from 'semantic-ui-react';
 
 import './style.scss';
 import SearchInput from '../../components/SearchInput/SearchInput';
@@ -135,8 +135,8 @@ function Blog() {
                             <Link to={`/posts/${post.id}`} className="blog-post-link">
                                 <Card key={post.id} className="posts-container-post">
                                     <Image className="blog-article-image" src={
-                                        post.attributes.image.data.attributes.formats.small !== undefined ?
-                                            API_URL + post.attributes.image.data.attributes.formats.small.url
+                                        post.attributes.image.data.attributes.url !== undefined ?
+                                            API_URL + post.attributes.image.data.attributes.url
                                         :
                                             "..."
                                     } wrapped/>
@@ -146,6 +146,7 @@ function Blog() {
                                             <span className='date'>{post.attributes.date}</span>
                                         </Card.Meta>
                                         <Card.Description>
+                                        <Divider />
                                         {post.attributes.content.substring(0,150)} ...
                                         </Card.Description>
                                     </Card.Content>
