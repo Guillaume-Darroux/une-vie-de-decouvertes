@@ -25,7 +25,6 @@ function Post () {
             });
         }, []);
         
-        console.log(post);
     return (
         <div className='post'>
             <div className="title-others">

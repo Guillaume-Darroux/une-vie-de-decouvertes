@@ -39,7 +39,7 @@ function Posts () {
         });
 
     }, []);
-    console.log("posts", posts);
+    
     return (
         <>
             <Card.Group className="card-group-container">

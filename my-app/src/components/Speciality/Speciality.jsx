@@ -22,7 +22,6 @@ function Speciality () {
         })
         .then(res => res.json())
         .then(res => {
-           console.log("res",res);
            setSpecialities(res.data);
            setIsLoading(false);
         });
