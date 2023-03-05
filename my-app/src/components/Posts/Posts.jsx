@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { API_URL } from '../../utils/config';
-import { Card, Divider, Image, Segment } from 'semantic-ui-react';
+import { Card, Divider, Image } from 'semantic-ui-react';
 
 import "./style.scss";
 import { Link } from 'react-router-dom';
