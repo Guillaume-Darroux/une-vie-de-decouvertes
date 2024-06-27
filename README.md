@@ -1,2 +1,2 @@
 # une-vie-de-decouvertes
-Un site professionnel sur la naturopthie et des thèmes liés.
+Un site professionnel sur la naturopathie et des thèmes liés.
